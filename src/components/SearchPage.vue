@@ -1,7 +1,6 @@
 <script>
 import axios from 'axios';
 import AudioPlayer from './AudioPlayer.vue';
-import { mapActions } from 'vuex';
 export default {
     components:{
         AudioPlayer,
@@ -55,10 +54,6 @@ export default {
             this.$refs.audioPlayerRef.isPlaying = true;
             this.$refs.audioPlayerRef.startPlayback(track);
         },
-        ...mapActions(['addTrackToLibrary']),
-        addToLibrary(track) {
-            this.addTrackToLibrary(track);
-        },
     },
 };
 </script>
@@ -73,14 +68,10 @@ export default {
                     <img class="w-full block rounded" :src="track.image" alt="album-image" />
                     <div class="absolute bg-black rounded bg-opacity-0 group-hover:bg-opacity-60 w-full h-full top-0 flex items-center group-hover:opacity-100 transition justify-evenly">
                         <button @click="playTrack(track)" class="hover:scale-110 opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
-                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" />
-                        </svg>
-                        </button>
-                        <button @click="addToLibrary(track)" class="hover:scale-110 opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
-                            <path d="M8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
-                        </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
+                            </svg>
                         </button>
                     </div>
                 </div>

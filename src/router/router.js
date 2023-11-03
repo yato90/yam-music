@@ -4,7 +4,7 @@ import SearchPage from '../components/SearchPage.vue';
 import LibraryPage from '../components/LibraryPage.vue';
 
 const routes = [
-  { path: '/', component: SearchPage },
+  { path: '/search', component: SearchPage },
   { path: '/library', component: LibraryPage },
 ];
 

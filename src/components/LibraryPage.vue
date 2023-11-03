@@ -50,7 +50,7 @@ export default {
                 </div>
             </li>
         </ul>
-        <AudioPlayer ref="audioPlayerRef" />
+        <AudioPlayer ref="audioPlayerRef"/>
     </div>
 </template>
 
