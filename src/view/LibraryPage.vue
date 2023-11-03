@@ -1,5 +1,5 @@
 <script>
-import AudioPlayer from './AudioPlayer.vue';
+import AudioPlayer from '../components/AudioPlayer.vue';
 import { mapState, mapActions } from 'vuex';
 export default {
     components:{
